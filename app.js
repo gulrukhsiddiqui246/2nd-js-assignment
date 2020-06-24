@@ -95,7 +95,26 @@
 
             //   Question#13:
       
+        var userName=prompt("Enter your user name");
+    for(var i=0; i<=userName.length; i++){
+          if(userName[i]=="!"){
+                alert("Please enter a valid username");
+          }
+          else if(userName[i]==","){
+            alert("Please enter a valid username");
+      }
+      else if(userName[i]=="."){
+            alert("Please enter a valid username");
+      }
+      else if(userName[i]=="@"){
+            alert("Please enter a valid username");
+      }
+      else{
+            alert("correct");
+      }
+    }
 
+      
 
 
 
@@ -140,34 +159,15 @@
 
 
           //   Question#15:
-       //    var password =prompt("Enter your password. it should be the combination of alphabates & Nums.");
-       //    var firstChar =password.slice(0,1);
-       //    var conFirstChar =parseInt(firstChar);
-          
-
-       //    for(var i=0; i<=9; i++ ){
-       //        if(i ===conFirstChar){
-       //               alert("Password can not begin with a number")
-       //               break;
-       //        }
-             
-       //    }
-       //    for(var a=0; a<=password.length; a++){
-       //        if((a >='A'&& a<= 'Z')||(a >='a'&& a<= 'z')){
-       //               alert("Entered password: "+password)
-       //               break;
-       //        }
-       //        else if(password.length<6){
-       //               alert("It must at least 6 characters long")
-       //               break;
-       //        }
-       //        else{
-       //               alert("Please enter a valid password")
-       //               break;
-       //        }
-             
-       // }
-
+          var password =prompt("Enter your password. it should be the combination of alphabates & Nums.");
+          if(password.match(/^[a-zA-Z]\w{1,6}$/gi)){
+            alert("Correct");
+            
+      }
+      else{
+            alert("incorrect");
+            
+      }
 
 
 
@@ -560,6 +560,7 @@
 
 
 
+     
       //   Question#1:
       function date(current){
           document.write(current);
@@ -625,7 +626,7 @@
 
  //   Question#5:
  function square (x){
-  var a =x * x;
+  var a =Math.pow(x,2) ;
   alert(a)
   };
  square(12);
@@ -652,11 +653,151 @@
 
   //   Question#7:
 
-// function counting(a,b){
-//        var num1 =+prompt("enter a starting number");
-// var num2 =+prompt("enter a ending number");
-// for(var i=num1; i<=num2; i++){
-//   document.write(num2+"<br>");
-// }
-// }
-// counting();
+  function counting(num1,num2,i){
+       var num1 =+prompt("enter a starting number");
+       var num2 =+prompt("enter a ending number");
+       var i;
+       for(i=num1; i<=num2; i++){
+              document.write(i+"<br>")  
+       }
+ }
+  counting();
+
+
+  
+
+
+       //  Question#8:
+     
+
+      
+      function outer(base,perpendicular,h){
+       var base =+prompt("Enter base value");
+       var perpendicular =+prompt("Enter perpendicular value");
+       
+       var h= Math.pow(base,2)+Math.pow(perpendicular,2);
+       console.log(h);
+      
+      function innerFunction(h2){
+       var h2 =Math.round(Math.sqrt(h));
+       alert(h2); 
+  }
+  return innerFunction
+       }
+     
+    outer()();
+   
+
+
+
+
+       //  Question#9:
+      function area(width,height){
+            var a= width*height;
+            return a;
+      }
+     var A= area(12,15);
+     alert(A);
+     
+  
+
+       //  Question#10:
+
+      function palindrome(word,check){
+
+            var word =("madam");
+            var check;
+            for(var i=word.length-1; i>=0; i--){
+                  document.write(word[i]+"<br>");
+                  
+            
+            }
+            if(word[i] == check){
+                  document.write("<br>" +word+" is palindrome word");
+            }
+      }
+     
+      palindrome();
+
+
+       //   Question#11:
+       function capitalize(){
+            var str=("the quick brown fox");
+            var word1=str.replace("the","The");
+            var word2=word1.replace("quick","Quick");
+            var word3=word2.replace("brown","Brown");
+            var word4=word3.replace("fox","Fox");
+
+            document.write("Example stgring: "+str+"<br>");
+            document.write("Expacted output: "+word4);
+            
+       }
+       capitalize();
+      
+
+
+
+       //   Question#12:
+       function find_longest_word(str)
+   {
+  var array1 = str.match(/\w[a-z]{0,}/gi);
+  var result = array1[0];
+
+  for(var x = 1 ; x < array1.length ; x++)
+  {
+    if(result.length < array1[x].length)
+    {
+    result = array1[x];
+    } 
+  }
+  return result;
+   }
+  
+        document.write(find_longest_word('Web Development Tutorial'));
+
+
+
+
+       //    Question#13:
+    function findletter(str,letter){
+      var str="JSResourceS.com";
+      var letter="o";
+      var a=0;
+          for(var i=0; i<str.length; i++){
+                if(str.charAt(i)===letter){
+                      var a= a+1;
+                      
+                }
+          }
+          document.write(a); 
+    }
+    
+
+     findletter();
+    
+
+
+
+
+
+       //   Question#14:
+       
+       function calcCircumference(radius){
+             var calCir=2*34.1*radius;
+             document.write("The circumference is "+calCir+"<br>");
+
+       }
+   
+    calcCircumference(4);
+
+    function calcArea(r){
+        var calA= 34.1*(Math.pow(r,2));
+        document.write("The Area of circle is "+calA);
+    }
+
+    calcArea(4);
+     
+       
+           
+      
+      
